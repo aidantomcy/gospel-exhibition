@@ -1,13 +1,11 @@
 import express from "express";
-import { config } from "dotenv";
 import gospelMatthewRouter from "./routes/gospelMatthew";
 import gospelMarkRouter from "./routes/gospelMark";
 import gospelLukeRouter from "./routes/gospelLuke";
 import gospelJohnRouter from "./routes/gospelJohn";
+import { PORT } from "./constants";
 
-config();
 const app = express();
-const PORT = process.env.PORT ?? 5000;
 
 app.get("/", (req, res) => {
   res.json({
