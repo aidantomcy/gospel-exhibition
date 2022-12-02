@@ -4,7 +4,9 @@ import gospelMarkRouter from "./routes/gospelMark";
 import gospelLukeRouter from "./routes/gospelLuke";
 import gospelJohnRouter from "./routes/gospelJohn";
 import { PORT } from "./constants";
+import connectDB from "./db/connectDB";
 
+connectDB();
 const app = express();
 
 app.get("/", (req, res) => {
