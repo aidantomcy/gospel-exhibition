@@ -10,7 +10,7 @@ connectDB();
 const app = express();
 
 app.get("/", (req, res) => {
-  res.json({
+  res.status(200).json({
     gospels: ["matthew", "mark", "luke", "john"],
   });
 });
