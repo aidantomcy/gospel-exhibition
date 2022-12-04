@@ -9,14 +9,17 @@ import connectDB from "./db/connectDB";
 connectDB();
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use("/gospels/matthew", gospelMatthewRouter);
+app.use("/gospels/mark", gospelMarkRouter);
+app.use("/gospels/luke", gospelLukeRouter);
+app.use("/gospels/john", gospelJohnRouter);
+
 app.get("/", (req, res) => {
   res.status(200).json({
     gospels: ["matthew", "mark", "luke", "john"],
   });
 });
-app.use("/gospels/matthew", gospelMatthewRouter);
-app.use("/gospels/mark", gospelMarkRouter);
-app.use("/gospels/luke", gospelLukeRouter);
-app.use("/gospels/john", gospelJohnRouter);
 
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));
