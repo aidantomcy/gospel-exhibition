@@ -1,8 +1,14 @@
 import { Router } from "express";
-import { getParables } from "../controllers/gospelLukeController";
+import {
+  addParable,
+  deleteParable,
+  getParables,
+  updateParable,
+} from "../controllers/gospelLukeController";
 
 const router = Router();
 
-router.route("/").get(getParables);
+router.route("/").get(getParables).post(addParable);
+router.route("/:id").put(updateParable).delete(deleteParable);
 
 export default router;
