@@ -5,12 +5,14 @@ import gospelLukeRouter from "./routes/gospelLuke";
 import gospelJohnRouter from "./routes/gospelJohn";
 import { PORT } from "./constants";
 import connectDB from "./db/connectDB";
+import errorHandler from "./middleware/errorMiddleware";
 
 connectDB();
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(errorHandler);
 app.use("/gospels/matthew", gospelMatthewRouter);
 app.use("/gospels/mark", gospelMarkRouter);
 app.use("/gospels/luke", gospelLukeRouter);
