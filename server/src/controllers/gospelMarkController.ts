@@ -8,12 +8,6 @@ const getParables = expressAsyncHandler(async (req, res) => {
 });
 
 const addParable = expressAsyncHandler(async (req, res) => {
-  type Data = {
-    title: string;
-    body: string;
-    explanation: string;
-  };
-
   const { title, body, explanation }: Data = req.body ?? {
     title: "",
     body: "",
