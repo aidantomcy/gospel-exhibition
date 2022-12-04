@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-head-element */
+import "../styles/output.css";
 
 export default function RootLayout({
   children,
