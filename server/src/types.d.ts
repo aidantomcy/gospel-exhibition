@@ -9,3 +9,5 @@ type Error = {
   message: string;
   stack?: string;
 };
+
+type Gospels = "matthew" | "mark" | "luke" | "john";
