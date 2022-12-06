@@ -1,12 +1,9 @@
 import { Router } from "express";
-import {
-  addParable,
-  deleteParable,
-  getParables,
-  updateParable,
-} from "../controllers/gospelMatthewController";
+import Controller from "../controllers/Controller";
 
 const router = Router();
+const controller = new Controller("matthew");
+const { getParables, addParable, updateParable, deleteParable } = controller;
 
 router.route("/").get(getParables).post(addParable);
 router.route("/:id").put(updateParable).delete(deleteParable);
