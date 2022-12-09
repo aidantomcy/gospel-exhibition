@@ -1,5 +1,6 @@
 import expressAsyncHandler from "express-async-handler";
 import Parable from "../models/parableModel";
+import { z } from "zod";
 
 class Controller {
   gospel: Gospels;
@@ -15,16 +16,20 @@ class Controller {
   });
 
   addParable = expressAsyncHandler(async (req, res) => {
-    const { title, body, explanation }: Data = req.body ?? {
-      title: "",
-      body: "",
-      explanation: "",
-    };
+    const Data = z.object({
+      title: z.string(),
+      body: z.string(),
+      explanation: z.string(),
+    });
 
-    if (title === "" || body === "" || explanation === "") {
+    const isValid = Data.safeParse(req.body).success;
+    if (!isValid) {
       res.status(400);
       throw new Error("please provide data for all fields");
     }
+
+    type Data = z.infer<typeof Data>;
+    const { title, body, explanation }: Data = req.body;
 
     const parable = await Parable.create({
       gospel: this.gospel,
