@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"next dev\" \"tailwindcss --input styles/input.css --output styles/output.css --watch --minify\"",
     "turbo:dev": "concurrently \"next dev --turbo\" \"tailwindcss --input styles/input.css --output styles/output.css --watch --minify\"",
     "build": "next build",
     "start": "next start",
