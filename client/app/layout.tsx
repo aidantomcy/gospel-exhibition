@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-head-element */
 import "../styles/output.css";
+import Navbar from "./Navbar";
 
 export default function RootLayout({
   children,
@@ -9,7 +10,10 @@ export default function RootLayout({
   return (
     <html>
       <head></head>
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
