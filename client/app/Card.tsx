@@ -12,8 +12,8 @@ const Card = ({ title, image, description }: CardProps) => {
       <Image
         src={image}
         alt="image cannot be loaded"
-        width="150"
-        height="150"
+        width={150}
+        height={150}
         className="rounded-2xl"
       />
       <div className="text-center py-2">{title}</div>
