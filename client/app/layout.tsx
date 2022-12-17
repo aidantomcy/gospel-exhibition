@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-head-element */
-import "../styles/output.css";
+import "./globals.css";
 import Navbar from "./Navbar";
 
 export default function RootLayout({
