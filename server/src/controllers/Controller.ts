@@ -15,6 +15,17 @@ class Controller {
     res.status(200).json(parables);
   });
 
+  getIndividualParable = expressAsyncHandler(async (req, res) => {
+    const parable = await Parable.findById(req.params.id);
+
+    if (!parable) {
+      res.status(400);
+      throw new Error("parable not found");
+    }
+
+    res.status(200).json(parable);
+  });
+
   addParable = expressAsyncHandler(async (req, res) => {
     const Data = z.object({
       title: z.string(),
