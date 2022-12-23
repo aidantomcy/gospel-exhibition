@@ -31,6 +31,7 @@ class Controller {
       title: z.string(),
       body: z.string(),
       explanation: z.string(),
+      verses: z.string(),
     });
 
     const isValid = Data.safeParse(req.body).success;
@@ -40,13 +41,14 @@ class Controller {
     }
 
     type Data = z.infer<typeof Data>;
-    const { title, body, explanation }: Data = req.body;
+    const { title, body, explanation, verses }: Data = req.body;
 
     const parable = await Parable.create({
       gospel: this.gospel,
       title,
       body,
       explanation,
+      verses,
     });
 
     res.status(201).json(parable);
