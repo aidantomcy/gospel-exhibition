@@ -17,6 +17,10 @@ const parableSchema = new Schema({
     type: String,
     required: true,
   },
+  verses: {
+    type: String,
+    required: true,
+  },
 });
 
 export default model("Parable", parableSchema);
