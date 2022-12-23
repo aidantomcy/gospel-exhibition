@@ -6,5 +6,6 @@ type ApiResponse = {
   title: string;
   body: string;
   explanation: string;
+  verses: string;
   __v: number;
 };
