@@ -35,7 +35,7 @@ const Parables = async ({ params }: { params: { gospel: Gospels } }) => {
         </svg>
         Back
       </Link>
-      <div className="grid place-items-center w-screen">
+      <div className="grid place-items-center w-screen overflow-x-hidden">
         <div className="grid place-items-center grid-cols-4 gap-8 max-w-5xl">
           {data.map((parable) => {
             const { _id: id, title } = parable;
