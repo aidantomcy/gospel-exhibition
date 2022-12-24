@@ -8,7 +8,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html className="overflow-x-hidden">
       <head></head>
       <body>
         <Navbar />
