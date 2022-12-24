@@ -13,20 +13,21 @@ const Parables = async ({ params }: { params: { gospel: Gospels } }) => {
   const data = await getParables(params.gospel);
 
   return (
-    <div className="grid place-items-center">
-      {data.map((parable) => {
-        const { _id: id, title } = parable;
-
-        return (
-          <Card
-            key={id}
-            title={title}
-            image={`/${id}-thumbnail.jpg`}
-            url={`/${params.gospel}/${id}`}
-            description=""
-          />
-        );
-      })}
+    <div className="grid place-items-center w-screen">
+      <div className="grid place-items-center grid-cols-4 gap-8 max-w-5xl">
+        {data.map((parable) => {
+          const { _id: id, title } = parable;
+          return (
+            <Card
+              key={id}
+              title={title}
+              image={`/${id}-thumbnail.jpg`}
+              url={`/${params.gospel}/${id}`}
+              description=""
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };
