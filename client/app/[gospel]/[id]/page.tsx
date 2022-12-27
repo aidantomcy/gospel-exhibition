@@ -58,6 +58,7 @@ const Parable = async ({
           width={650}
           height={650}
           className="rounded-2xl"
+          priority
         />
         <div className="px-4">
           <h1 className="text-4xl">{title}</h1>

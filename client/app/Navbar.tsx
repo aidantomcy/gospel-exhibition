@@ -11,7 +11,7 @@ const Navbar = () => {
       </Link>
       <Link
         className="text-2xl hover:underline hover:decoration-sky-500 hover:decoration-wavy"
-        href="/foo"
+        href="/contact"
       >
         Contact
       </Link>
