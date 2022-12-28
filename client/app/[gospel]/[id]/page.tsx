@@ -57,7 +57,7 @@ const Parable = async ({
           alt="failed to load image"
           width={650}
           height={650}
-          className="rounded-2xl"
+          className="rounded-2xl w-96 object-cover"
           priority
         />
         <div className="px-4">
