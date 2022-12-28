@@ -8,26 +8,10 @@ const HomePage = () => {
           title="Matthew the Evangelist"
           image="/stmatthew.jpg"
           url="/matthew"
-          description=""
         />
-        <Card
-          title="Mark the Evangelist"
-          image="/stmark.jpg"
-          url="/mark"
-          description=""
-        />
-        <Card
-          title="Luke the Evangelist"
-          image="/stluke.jpg"
-          url="/luke"
-          description=""
-        />
-        <Card
-          title="John the Evangelist"
-          image="/stjohn.jpg"
-          url="/john"
-          description=""
-        />
+        <Card title="Mark the Evangelist" image="/stmark.jpg" url="/mark" />
+        <Card title="Luke the Evangelist" image="/stluke.jpg" url="/luke" />
+        <Card title="John the Evangelist" image="/stjohn.jpg" url="/john" />
       </div>
     </div>
   );

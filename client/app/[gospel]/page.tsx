@@ -45,7 +45,6 @@ const Parables = async ({ params }: { params: { gospel: Gospels } }) => {
                 title={title}
                 image={`/${id}-thumbnail.jpg`}
                 url={`/${params.gospel}/${id}`}
-                description=""
               />
             );
           })}
