@@ -5,10 +5,9 @@ type CardProps = {
   title: string;
   image: string;
   url: string;
-  description: string;
 };
 
-const Card = ({ title, image, url, description }: CardProps) => {
+const Card = ({ title, image, url }: CardProps) => {
   return (
     <Link
       href={url}
