@@ -36,7 +36,7 @@ const Parables = async ({ params }: { params: { gospel: Gospels } }) => {
         Back
       </Link>
       <div className="text-center text-4xl my-4">
-        {`The Gospel of ${
+        {`The Gospel According to ${
           params.gospel.charAt(0).toUpperCase() + params.gospel.slice(1)
         }`}
       </div>
