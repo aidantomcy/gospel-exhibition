@@ -35,6 +35,11 @@ const Parables = async ({ params }: { params: { gospel: Gospels } }) => {
         </svg>
         Back
       </Link>
+      <div className="text-center text-4xl my-4">
+        {`The Gospel of ${
+          params.gospel.charAt(0).toUpperCase() + params.gospel.slice(1)
+        }`}
+      </div>
       <div className="grid place-items-center w-screen overflow-x-hidden">
         <div className="grid place-items-center grid-cols-4 gap-8 max-w-5xl">
           {data.map((parable) => {
