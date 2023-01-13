@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Card from "../Card";
+import Card from "../(components)/Card";
 
 const getParables = async (gospel: Gospels): Promise<ApiResponse[]> => {
   const response = await fetch(`http://localhost:8000/gospels/${gospel}`, {
