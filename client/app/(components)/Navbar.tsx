@@ -1,8 +1,9 @@
 import Link from "next/link";
+import ThemeButton from "./ThemeButton";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-around py-4 bg-slate-100">
+    <nav className="flex justify-around py-4 bg-slate-100 h-16 items-center">
       <Link
         className="text-2xl hover:underline hover:decoration-sky-500 hover:decoration-wavy"
         href="/"
@@ -21,6 +22,7 @@ const Navbar = () => {
       >
         About the creator
       </Link>
+      <ThemeButton />
     </nav>
   );
 };
