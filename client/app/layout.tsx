@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html className={`${inter.variable} font-inter overflow-x-hidden`}>
       <head></head>
-      <body>
+      <body className="dark:bg-dark">
         <Navbar />
         {children}
       </body>
