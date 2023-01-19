@@ -10,11 +10,15 @@ const ThemeButton = () => {
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
+
+    if (theme === "dark") {
+      window.document.documentElement.classList.add("dark");
+    }
   }, [theme]);
 
   return (
     <button
-      className="flex justify-center items-center bg-slate-300 p-2 rounded-md"
+      className="flex justify-center items-center bg-slate-300 p-2 rounded-md dark:bg-gray-800"
       onClick={() => {
         if (theme === "dark") {
           setTheme("light");
