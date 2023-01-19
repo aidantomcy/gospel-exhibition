@@ -33,7 +33,7 @@ const Parable = async ({
     <>
       <Link
         href={`/${params.gospel}`}
-        className="text-xl flex items-center justify-center w-20 bg-slate-100 m-6 p-2 rounded-md hover:bg-slate-200 hover:shadow-sm"
+        className="text-xl flex items-center justify-center w-20 bg-slate-100 m-6 p-2 rounded-md hover:bg-slate-200 hover:shadow-sm dark:bg-secondary dark:text-white"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +60,7 @@ const Parable = async ({
           className="rounded-2xl w-96 object-cover"
           priority
         />
-        <div className="px-4">
+        <div className="px-4 dark:text-white">
           <h1 className="text-4xl">{title}</h1>
           <p className="pt-4 text-xl">{verses}</p>
           <p className="pt-2">{body}</p>

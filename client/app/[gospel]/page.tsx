@@ -17,7 +17,7 @@ const Parables = async ({ params }: { params: { gospel: Gospels } }) => {
     <>
       <Link
         href="/"
-        className="text-xl flex items-center justify-center w-20 bg-slate-100 ml-36 mt-6 p-2 rounded-md hover:bg-slate-200 hover:shadow-sm"
+        className="text-xl flex items-center justify-center w-20 bg-slate-100 ml-36 mt-6 p-2 rounded-md hover:bg-slate-200 hover:shadow-sm dark:bg-secondary dark:text-white"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ const Parables = async ({ params }: { params: { gospel: Gospels } }) => {
         </svg>
         Back
       </Link>
-      <div className="text-center text-4xl my-4">
+      <div className="text-center text-4xl my-4 dark:text-white">
         {`The Gospel According to ${
           params.gospel.charAt(0).toUpperCase() + params.gospel.slice(1)
         }`}
