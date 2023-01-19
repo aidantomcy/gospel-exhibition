@@ -28,3 +28,39 @@
 ::-webkit-scrollbar-track {
   margin: 3px 0;
 }
+
+.dark ::-webkit-scrollbar {
+  background-image: initial;
+  background-color: transparent;
+  height: 8px;
+  width: 8px;
+  background-color: #202324;
+  color: #aba499;
+}
+
+.dark ::-webkit-scrollbar-corner {
+  background-color: #181a1b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  border-color: initial;
+  box-shadow: none;
+  background-image: initial;
+  background-color: #555;
+  border: none;
+  box-shadow: none;
+  border-radius: 4px;
+  min-height: 40px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #404344;
+}
+
+.dark ::-webkit-scrollbar-thumb:active {
+  background: #4a4c4d;
+}
+
+::-webkit-scrollbar-track {
+  margin: 3px 0;
+}
