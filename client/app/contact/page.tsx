@@ -6,7 +6,7 @@ const Contact = () => {
     <div className="">
       <Link
         href="/"
-        className="text-xl flex items-center justify-center w-20 bg-slate-100 m-6 p-2 rounded-md hover:bg-slate-200 hover:shadow-sm"
+        className="text-xl flex items-center justify-center w-20 bg-slate-100 m-6 p-2 rounded-md hover:bg-slate-200 hover:shadow-sm dark:bg-secondary dark:text-white"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ const Contact = () => {
           className="rounded-2xl"
           priority
         />
-        <div className="px-4">
+        <div className="px-4 dark:text-white">
           <div className="text-4xl">Contact</div>
           <div className="text-xl">
             <div className="mt-8">
