@@ -55,21 +55,23 @@ class Controller {
   });
 
   updateParable = expressAsyncHandler(async (req, res) => {
-    const parable = await Parable.findById(req.params.id);
+    const id = req.params.id;
+    const parable = await Parable.findById(id);
 
     if (!parable) {
       res.status(400);
       throw new Error("parable not found");
     }
 
-    const updatedParable = Parable.findByIdAndUpdate(req.params.id, req.body, {
+    const updatedParable = Parable.findByIdAndUpdate(id, req.body, {
       new: true,
     });
     res.status(204).json(updatedParable);
   });
 
   deleteParable = expressAsyncHandler(async (req, res) => {
-    const parable = await Parable.findById(req.params.id);
+    const id = req.params.id;
+    const parable = await Parable.findById(id);
 
     if (!parable) {
       res.status(400);
@@ -77,7 +79,7 @@ class Controller {
     }
 
     await parable.remove();
-    res.status(200).json({ id: req.params.id });
+    res.status(200).json({ id });
   });
 }
 
