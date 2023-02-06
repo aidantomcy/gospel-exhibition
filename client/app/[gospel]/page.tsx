@@ -1,11 +1,14 @@
 import Link from "next/link";
 import Card from "../(components)/Card";
+import fetchData from "../(utils)/fetchData";
 
 const getParables = async (gospel: Gospels): Promise<ApiResponse[]> => {
-  const response = await fetch(`http://localhost:8000/gospels/${gospel}`, {
-    cache: "no-store",
-  });
-  const data: Promise<ApiResponse[]> = await response.json();
+  const data: Promise<ApiResponse[]> = fetchData(
+    `http://localhost:8000/gospels/${gospel}`,
+    {
+      cache: "no-store",
+    }
+  );
 
   return data;
 };

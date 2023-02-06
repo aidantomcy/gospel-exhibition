@@ -1,17 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import fetchData from "../../(utils)/fetchData";
 
 const getParableData = async (
   gospel: Gospels,
   id: string
 ): Promise<ApiResponse> => {
-  const response = await fetch(
+  const data: Promise<ApiResponse> = fetchData(
     `http://localhost:8000/gospels/${gospel}/${id}`,
-    {
-      cache: "no-store",
-    }
+    { cache: "no-store" }
   );
-  const data: Promise<ApiResponse> = await response.json();
 
   return data;
 };
