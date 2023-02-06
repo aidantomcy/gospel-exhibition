@@ -1,6 +1,6 @@
 import { model, Schema } from "mongoose";
 
-const parableSchema = new Schema({
+const parableSchema = new Schema<ParableSchema>({
   gospel: {
     type: String,
     required: true,
