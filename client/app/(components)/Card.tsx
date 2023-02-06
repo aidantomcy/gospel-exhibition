@@ -5,9 +5,10 @@ type CardProps = {
   title: string;
   image: string;
   url: string;
+  priority?: boolean;
 };
 
-const Card = ({ title, image, url }: CardProps) => {
+const Card = ({ title, image, url, priority }: CardProps) => {
   return (
     <Link
       href={url}
@@ -19,6 +20,7 @@ const Card = ({ title, image, url }: CardProps) => {
         width={150}
         height={150}
         className="rounded-2xl w-40 h-52 object-cover"
+        priority
       />
       <div className="text-center py-2">{title}</div>
     </Link>
