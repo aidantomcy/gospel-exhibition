@@ -5,9 +5,7 @@ import fetchData from "../(utils)/fetchData";
 const getParables = async (gospel: Gospels): Promise<ApiResponse[]> => {
   const data = fetchData<ApiResponse[]>(
     `http://localhost:8000/gospels/${gospel}`,
-    {
-      cache: "no-store",
-    }
+    { cache: "no-store" }
   );
 
   return data;
