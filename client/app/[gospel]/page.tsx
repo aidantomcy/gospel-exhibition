@@ -11,7 +11,13 @@ const getParables = async (gospel: Gospels): Promise<ApiResponse[]> => {
   return data;
 };
 
-const Parables = async ({ params }: { params: { gospel: Gospels } }) => {
+type Params = {
+  params: {
+    gospel: Gospels;
+  };
+};
+
+const Parables = async ({ params }: Params) => {
   const data = await getParables(params.gospel);
 
   return (

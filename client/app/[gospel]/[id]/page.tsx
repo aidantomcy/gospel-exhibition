@@ -14,11 +14,14 @@ const getParableData = async (
   return data;
 };
 
-const Parable = async ({
-  params,
-}: {
-  params: { gospel: Gospels; id: string };
-}) => {
+type Params = {
+  params: {
+    gospel: Gospels;
+    id: string;
+  };
+};
+
+const Parable = async ({ params }: Params) => {
   const {
     _id: id,
     title,
