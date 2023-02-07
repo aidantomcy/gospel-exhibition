@@ -6,7 +6,7 @@ const getParableData = async (
   gospel: Gospels,
   id: string
 ): Promise<ApiResponse> => {
-  const data: Promise<ApiResponse> = fetchData(
+  const data = fetchData<ApiResponse>(
     `http://localhost:8000/gospels/${gospel}/${id}`,
     { cache: "no-store" }
   );

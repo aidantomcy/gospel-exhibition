@@ -3,7 +3,7 @@ import Card from "../(components)/Card";
 import fetchData from "../(utils)/fetchData";
 
 const getParables = async (gospel: Gospels): Promise<ApiResponse[]> => {
-  const data: Promise<ApiResponse[]> = fetchData(
+  const data = fetchData<ApiResponse[]>(
     `http://localhost:8000/gospels/${gospel}`,
     {
       cache: "no-store",
