@@ -17,7 +17,7 @@ The frontend for this website has also been written in TypeScript, and I have us
 1. Rename the `.env.example` file to .env, and add values for the given fields.
 1. Compile the TypeScript code:
    ```
-   pnpm dev
+   pnpm build
    ```
 1. Run the compiled JavaScript code:
    ```
