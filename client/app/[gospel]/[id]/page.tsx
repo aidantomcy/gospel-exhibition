@@ -1,6 +1,7 @@
 import Image from "next/image";
 import fetchData from "../../(utils)/fetchData";
 import BackButton from "../../(components)/BackButton";
+import { Metadata } from "next";
 
 const getParableData = async (
   gospel: Gospels,
@@ -18,6 +19,16 @@ type Params = {
   params: {
     gospel: Gospels;
     id: string;
+  };
+};
+
+export const generateMetadata = async ({
+  params,
+}: Params): Promise<Metadata> => {
+  const { title } = await getParableData(params.gospel, params.id);
+
+  return {
+    title,
   };
 };
 

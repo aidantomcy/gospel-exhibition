@@ -1,6 +1,7 @@
 import Card from "../(components)/Card";
 import fetchData from "../(utils)/fetchData";
 import BackButton from "../(components)/BackButton";
+import { Metadata } from "next";
 
 const getParables = async (gospel: Gospels): Promise<ApiResponse[]> => {
   const data = fetchData<ApiResponse[]>(
@@ -14,6 +15,14 @@ const getParables = async (gospel: Gospels): Promise<ApiResponse[]> => {
 type Params = {
   params: {
     gospel: Gospels;
+  };
+};
+
+export const generateMetadata = ({ params }: Params): Metadata => {
+  return {
+    title: `The Gospel According to ${
+      params.gospel.charAt(0).toUpperCase() + params.gospel.slice(1)
+    }`,
   };
 };
 
