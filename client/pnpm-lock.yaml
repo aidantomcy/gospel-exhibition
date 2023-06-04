@@ -5,9 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@next/font':
-    specifier: ^13.1.0
-    version: 13.1.0
   '@types/node':
     specifier: 18.11.10
     version: 18.11.10
@@ -141,10 +138,6 @@ packages:
     resolution: {integrity: sha512-5jnh7q6I15efnjR/rR+/TGTc9hn53g3JTbEjAMjmeQiExKqEUgIXqrHI5zlTNlNyzCPkBB860/ctxXheZaF2Vw==}
     dependencies:
       glob: 7.1.7
-    dev: false
-
-  /@next/font@13.1.0:
-    resolution: {integrity: sha512-9+c2eWoeLftcGAul1fiXD8lL4o4/0beQrz2/0h0B0VV5AWrqCCfj/204quUxdp541ab+NCWVX/m49qjbqFMaFA==}
     dev: false
 
   /@next/swc-darwin-arm64@13.4.4:
