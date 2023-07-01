@@ -10,16 +10,9 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum Gospels {
-  MATTHEW
-  MARK
-  LUKE
-  JOHN
-}
-
 model Parable {
-  id          String  @id @default(uuid())
-  gospel      Gospels
+  id          String @id @default(uuid())
+  gospel      String
   title       String
   body        String
   explanation String
