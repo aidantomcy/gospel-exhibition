@@ -1,4 +1,4 @@
-import { PrismaClient, Gospels } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 import parables from "./data.json" assert { type: "json" };
 
 const prisma = new PrismaClient();
@@ -8,7 +8,7 @@ const main = async () => {
 
   for (const p of parables) {
     const user = await prisma.parable.create({
-      data: { ...p, gospel: p.gospel as Gospels },
+      data: { ...p },
     });
     console.log(`Added parable ${p.title}`);
   }
