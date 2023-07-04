@@ -1,45 +1,30 @@
+"use client";
+
 import Image from "next/image";
-import fetchData from "../../(utils)/fetchData";
 import BackButton from "../../(components)/BackButton";
+import useSWR, { Fetcher } from "swr";
 import { Metadata } from "next";
 
-const getParableData = async (
-  gospel: Gospels,
-  id: string
-): Promise<ApiResponse> => {
-  const data = fetchData<ApiResponse>(
-    `http://localhost:8000/gospels/${gospel}/${id}`,
-    { cache: "no-store" }
-  );
+// TODO: work on generating metadata
 
-  return data;
-};
+// export const generateMetadata = async ({
+//   params,
+// }: Params): Promise<Metadata> => {
+//   const { title } = await getParableData(params.gospel, params.id);
 
-type Params = {
-  params: {
-    gospel: Gospels;
-    id: string;
-  };
-};
+//   return {
+//     title,
+//   };
+// };
 
-export const generateMetadata = async ({
-  params,
-}: Params): Promise<Metadata> => {
-  const { title } = await getParableData(params.gospel, params.id);
+const Parable = ({ params }: { params: { gospel: Gospels; id: string } }) => {
+  const fetcher: Fetcher<Parable, { gospel: string; id: string }> = ({
+    gospel,
+    id,
+  }) => fetch(`/api/${gospel}/${id}`).then((res) => res.json());
+  const { data, error } = useSWR({ ...params }, fetcher);
 
-  return {
-    title,
-  };
-};
-
-const Parable = async ({ params }: Params) => {
-  const {
-    _id: id,
-    title,
-    verses,
-    body,
-    explanation,
-  } = await getParableData(params.gospel, params.id);
+  if (error !== undefined) throw new Error(error);
 
   return (
     <>
@@ -47,7 +32,7 @@ const Parable = async ({ params }: Params) => {
 
       <div className="flex px-4 my-12">
         <Image
-          src={`/${id}.jpg`}
+          src={`/${data?.id}.jpg`}
           alt="failed to load image"
           width={650}
           height={650}
@@ -55,11 +40,11 @@ const Parable = async ({ params }: Params) => {
           priority
         />
         <div className="px-4 dark:text-white">
-          <h1 className="text-4xl">{title}</h1>
-          <p className="pt-4 text-xl">{verses}</p>
-          <p className="pt-2">{body}</p>
+          <h1 className="text-4xl">{data?.title}</h1>
+          <p className="pt-4 text-xl">{data?.verses}</p>
+          <p className="pt-2">{data?.body}</p>
           <p className="pt-4 text-xl">Explanation</p>
-          <p className="pt-2">{explanation}</p>
+          <p className="pt-2">{data?.explanation}</p>
         </div>
       </div>
     </>
