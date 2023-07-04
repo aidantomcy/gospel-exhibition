@@ -2,11 +2,12 @@ import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import { z } from "zod";
 
+const prisma = new PrismaClient();
+
 export const GET = async (
   request: Request,
   { params }: { params: { gospel: string } }
 ) => {
-  const prisma = new PrismaClient();
   const parables = await prisma.parable.findMany({
     where: { gospel: params.gospel },
   });
@@ -18,7 +19,6 @@ export const POST = async (
   request: Request,
   { params }: { params: { gospel: string } }
 ) => {
-  const prisma = new PrismaClient();
   const ParableSchema = z.object({
     title: z.string(),
     body: z.string(),
