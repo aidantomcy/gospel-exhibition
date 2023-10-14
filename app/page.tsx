@@ -1,4 +1,9 @@
 import Card from "./(components)/Card";
+import { Metadata } from "next";
+
+export const metadata = {
+  title: "Home",
+} satisfies Metadata;
 
 const HomePage = () => {
   return (

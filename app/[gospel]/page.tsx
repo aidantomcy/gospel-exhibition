@@ -3,19 +3,6 @@
 import Card from "../(components)/Card";
 import BackButton from "../(components)/BackButton";
 import useSWR, { Fetcher } from "swr";
-import { Metadata } from "next";
-
-export const generateMetadata = ({
-  params,
-}: {
-  params: { gospel: Gospels };
-}): Metadata => {
-  return {
-    title: `The Gospel According to ${
-      params.gospel.charAt(0).toUpperCase() + params.gospel.slice(1)
-    }`,
-  };
-};
 
 const Parables = ({ params }: { params: { gospel: Gospels } }) => {
   const fetcher: Fetcher<Parable[], string> = (gospel) =>
