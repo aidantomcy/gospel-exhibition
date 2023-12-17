@@ -1,5 +1,4 @@
 import NavItem from "./NavItem";
-import ThemeButton from "./ThemeButton";
 
 const Navbar = () => {
   return (
@@ -7,7 +6,6 @@ const Navbar = () => {
       <NavItem text="Home" href="/" />
       <NavItem text="Contact" href="/contact" />
       <NavItem text="About the Creator" href="https://aidantomcy.github.io" />
-      <ThemeButton />
     </nav>
   );
 };
