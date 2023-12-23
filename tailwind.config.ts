@@ -8,8 +8,10 @@ export default {
         inter: ["var(--font-inter)"],
       },
       colors: {
-        dark: "#111010",
-        secondary: "#1f1f1f",
+        dark: {
+          primary: "#111010",
+          secondary: "#1f1f1f",
+        },
       },
     },
   },
