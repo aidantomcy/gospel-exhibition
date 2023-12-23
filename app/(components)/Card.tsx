@@ -12,7 +12,7 @@ const Card = ({ title, image, url, priority }: CardProps) => {
   return (
     <Link
       href={url}
-      className="my-6 bg-gray-200 p-4 rounded-xl grid place-items-center select-none h-80 w-52 mx-40 hover:-translate-y-1 hover:cursor-pointer hover:shadow-lg hover:duration-150 dark:bg-secondary dark:text-white"
+      className="my-6 bg-gray-200 p-4 rounded-xl grid place-items-center select-none h-80 w-52 mx-40 hover:-translate-y-1 hover:cursor-pointer hover:shadow-lg hover:duration-150 dark:bg-dark-secondary dark:text-white"
     >
       <Image
         src={image}
