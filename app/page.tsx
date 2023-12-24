@@ -7,7 +7,7 @@ export const metadata = {
 
 const HomePage = () => {
   return (
-    <div className="w-screen h-screen dark:text-white grid grid-cols-2">
+    <div className="w-screen h-dvh dark:text-white grid grid-cols-2">
       <GospelLink
         text="St. Matthew"
         backgroundImage="/stmatthew.jpg"
