@@ -17,4 +17,5 @@ model Parable {
   body        String
   explanation String
   verses      String
+  slug        String
 }
