@@ -10,7 +10,7 @@ const GospelLink = ({ text, backgroundImage, href }: Props) => {
   return (
     <Link href={href}>
       <div
-        className="w-full h-full bg-cover bg-center bg-no-repeat border-2 border-dark-primary border-opacity-25"
+        className="w-full h-full bg-cover bg-center bg-no-repeat hover:scale-[1.02] transition-all"
         style={{
           backgroundImage: `url(${backgroundImage})`,
         }}
