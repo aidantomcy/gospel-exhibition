@@ -1,5 +1,4 @@
 import "./globals.css";
-import Navbar from "./(components)/Navbar";
 import { Inter } from "next/font/google";
 
 const inter = Inter({
@@ -14,10 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html className={`${inter.variable} font-inter overflow-x-hidden`}>
-      <body className="dark:bg-dark-primary">
-        {/* <Navbar /> */}
-        {children}
-      </body>
+      <body className="dark:bg-dark-primary">{children}</body>
     </html>
   );
 }
